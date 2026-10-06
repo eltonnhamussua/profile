@@ -1,0 +1,268 @@
+/* ==================================================
+   GENERAL & RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #ffffff;
+    color: #2b2b2b;
+    line-height: 1.7;
+    overflow-x: hidden;
+    padding-top: 60px;    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* ==================================================
+   NAVIGATION / HEADER
+================================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #1f1f1f;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1250px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-name {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: opacity 0.2s ease;
+}
+
+.site-name:hover {
+    opacity: 0.8;
+}
+
+.navigation {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 260px;
+    height: calc(100vh - 60px);
+    background-color: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 25px;
+    gap: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.navigation.active {
+    transform: translateX(0);
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #cccccc;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.20s ease;
+}
+
+.navigation a:hover {
+    color: #ffffff;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* ==================================================
+   RESUME CONTENT
+================================================== */
+
+.page-section {
+    width: 100%;
+    padding: 40px 0 60px;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.Section-label h2 {
+    color: #111111;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: none;
+}
+
+.research-type {
+    display: block;
+    font-size: 14px;
+    color: #777777;
+    margin-bottom: 12px;
+}
+
+.research-content h2 {
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 16px;
+}
+
+.research-content p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4a4a4a;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.research-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.research-link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111111;
+    border-bottom: 1px solid #111111;
+    padding-bottom: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.research-link:hover {
+    opacity: 0.7;
+}
+
+.research-link.secondary {
+    color: #777777;
+    border-bottom-color: #aaaaaa;
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.site-footer {
+    width: 100%;
+    background-color: #1f1f1f;
+    color: #cccccc;
+    padding: 40px 30px 25px;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Bloco 1: Contactos */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #888888;
+    font-weight: 600;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.footer-social a {
+    color: #cccccc;
+    background-color: #2a2a2a;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #1f1f1f;
+    background-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Bloco 3: Copyright */
+.footer-bottom p {
+    font-size: 12px;
+    color: #666666;
+    text-align: center;
+}
+
+@media(max-width: 768px) {
+    .page-container, .nav-container {
+        padding: 0 20px;
+    }
+}
